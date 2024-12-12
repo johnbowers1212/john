@@ -1,0 +1,14 @@
+output_file="system_info.txt"
+
+echo "Hostname: $(hostname)" > "$output_file"
+echo "Operating System: $(uname -a)" >> "$output_file"
+echo "Kernel Version: $(uname -r)" >> "$output_file"
+echo "Uptime: $(uptime)" >> "$output_file"
+echo "CPU Information:" >> "$output_file"
+lscpu >> "$output_file"
+echo "Memory Information:" >> "$output_file"
+free -h >> "$output_file"
+echo "Disk Usage:" >> "$output_file"
+df -h >> "$output_file"
+
+echo "System information has been saved to $output_file"
